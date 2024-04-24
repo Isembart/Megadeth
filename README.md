@@ -1,0 +1,2 @@
+# Wersja edytora
+Unreal Engine 5.3.2
