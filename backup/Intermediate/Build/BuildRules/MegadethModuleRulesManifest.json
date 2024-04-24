@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\Projekty\\UE5\\Megadeth\\Source\\Megadeth\\Megadeth.Build.cs",
+		"D:\\Projekty\\UE5\\Megadeth\\Source\\Megadeth.Target.cs",
+		"D:\\Projekty\\UE5\\Megadeth\\Source\\MegadethEditor.Target.cs"
+	],
+	"EngineVersion": "5.3.2"
+}

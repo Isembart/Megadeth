@@ -1,0 +1,26 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\projekty\\ue5\\megadeth\\source\\megadeth\\megadethstagesubsystem.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\projekty\\ue5\\megadeth\\intermediate\\build\\win64\\x64\\megadetheditor\\development\\unrealed\\sharedpch.unrealed.cpp20.h.pch",
+        "Includes": [
+            "d:\\projekty\\ue5\\megadeth\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\megadeth\\definitions.megadeth.h",
+            "d:\\projekty\\ue5\\megadeth\\source\\megadeth\\megadethstagesubsystem.h",
+            "d:\\projekty\\ue5\\megadeth\\intermediate\\build\\win64\\unrealeditor\\inc\\megadeth\\uht\\megadethstagesubsystem.generated.h",
+            "d:\\projekty\\ue5\\megadeth\\source\\megadeth\\megadethdifficultysubsystem.h",
+            "d:\\projekty\\ue5\\megadeth\\intermediate\\build\\win64\\unrealeditor\\inc\\megadeth\\uht\\megadethdifficultysubsystem.generated.h",
+            "d:\\programy\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystatics.h",
+            "d:\\programy\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\kismet\\kismetsystemlibrary.h",
+            "d:\\programy\\ue_5.3\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "d:\\programy\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\kismetsystemlibrary.generated.h",
+            "d:\\programy\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\sound\\dialoguetypes.h",
+            "d:\\programy\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\dialoguetypes.generated.h",
+            "d:\\programy\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystaticstypes.h",
+            "d:\\programy\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystaticstypes.generated.h",
+            "d:\\programy\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystatics.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

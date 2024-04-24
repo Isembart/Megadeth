@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\projekty\\ue5\\megadeth\\intermediate\\build\\win64\\unrealeditor\\inc\\megadeth\\uht\\megadethgamemode.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\projekty\\ue5\\megadeth\\intermediate\\build\\win64\\x64\\megadetheditor\\development\\unrealed\\sharedpch.unrealed.cpp20.h.pch",
+        "Includes": [
+            "d:\\projekty\\ue5\\megadeth\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\megadeth\\definitions.megadeth.h",
+            "d:\\projekty\\ue5\\megadeth\\source\\megadeth\\megadethgamemode.h",
+            "d:\\programy\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "d:\\programy\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "d:\\programy\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
+            "d:\\programy\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
+            "d:\\projekty\\ue5\\megadeth\\intermediate\\build\\win64\\unrealeditor\\inc\\megadeth\\uht\\megadethgamemode.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
