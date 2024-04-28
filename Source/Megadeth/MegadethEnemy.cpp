@@ -75,7 +75,7 @@ float AMegadethEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageE
 
 void AMegadethEnemy::ScaleStats_Implementation(float DifficultyCoefficient)
 {
-	Level = 1 + (DifficultyCoefficient - 1)/0.33;
+	Level = 1 + (DifficultyCoefficient - 1)/0.2;
 	
 	Health = Health + Health/5 * (Level -1);
 	MaxHealth = Health;
@@ -83,6 +83,6 @@ void AMegadethEnemy::ScaleStats_Implementation(float DifficultyCoefficient)
 	Damage = Damage + Damage/3 * (Level -1);
 	
 	XpReward = DifficultyCoefficient * XpReward;
-	XpReward = DifficultyCoefficient * XpReward;
+	GoldReward = DifficultyCoefficient * GoldReward;
 }
 
