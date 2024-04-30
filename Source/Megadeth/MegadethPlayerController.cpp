@@ -152,7 +152,7 @@ void AMegadethPlayerController::AutoAttack_Implementation()
 	if(AMegadethCharacter* character = Cast<AMegadethCharacter>(GetPawn()))
 	{
 		OrientPlayerTowardsCursor();
-		StopMovement();
+		// StopMovement();
 		character->InvokeAutoAttack();
 	}	
 }

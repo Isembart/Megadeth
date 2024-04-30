@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "MegadethAbilityData.h"
+#include "MegadethPlayerStats.h"
 #include "GameFramework/Character.h"
 #include "Containers/Array.h"
 
@@ -61,7 +62,9 @@ public:
 	FPlayerXpChange PlayerXpChange;
 	UPROPERTY(BlueprintAssignable, BlueprintCallable)
 	FPlayerHpChangeSignature PlayerHpChange;
-	
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Stats")
+	FMegadethPlayerStats Stats;
 private:
 	/** Top down camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
@@ -83,39 +86,9 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Skills", meta = (AllowPrivateAccess = "true"))
 	double AACooldown = 0;
 
-	//Stats
-	//Base
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BaseStats", meta = (AllowPrivateAccess = "true"))
-	double BaseHealth = 100;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BaseStats", meta = (AllowPrivateAccess = "true"))
-	double BaseDamage = 12;
-	
-	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category="Stats", meta = (AllowPrivateAccess = "true"))
-	double Health = BaseHealth;
-	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category="Stats", meta = (AllowPrivateAccess = "true"))
-	double MaxHealth = BaseHealth;
-	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category="Stats", meta = (AllowPrivateAccess = "true"))
-	double Damage = BaseDamage;
-	UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category="Stats", meta = (AllowPrivateAccess = "true"))
-	int Level = 1;
-
-	//private variable to track level ups
 	int previousLevel = 1;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats", meta = (AllowPrivateAccess = "true"))
-	int Gold = 0;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats", meta = (AllowPrivateAccess = "true"))
-	int XP = 0;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats", meta = (AllowPrivateAccess = "true"))
-	double BaseHealthRegen = 20;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats", meta = (AllowPrivateAccess = "true"))
-	double HealthRegen = BaseHealthRegen;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats", meta = (AllowPrivateAccess = "true"))
-	double TimeToRegen = 5;
-
 	UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category="Stats", meta = (AllowPrivateAccess = "true"))
-	double RemainingTimeToRegen = TimeToRegen;
+	double RemainingTimeToRegen = Stats.TimeToRegen;
 };
 

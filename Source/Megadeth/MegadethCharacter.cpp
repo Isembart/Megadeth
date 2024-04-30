@@ -80,10 +80,10 @@ void AMegadethCharacter::Tick(float DeltaSeconds)
 	}
 	else
 	{
-		Health += BaseHealthRegen * DeltaSeconds;
-		if(Health > MaxHealth)
+		Stats.Health += Stats.HealthRegen * DeltaSeconds;
+		if(Stats.Health > Stats.MaxHealth)
 		{
-			Health = MaxHealth;
+			Stats.Health = Stats.MaxHealth;
 		}
 		PlayerHpChange.Broadcast();
 	}
@@ -104,7 +104,7 @@ void AMegadethCharacter::InvokeAbility(const int AbilityIndex)
 	if(AMegadethAbility* AbilityInstance = GetWorld()->SpawnActor<AMegadethAbility>(Skills[AbilityIndex]); AbilityInstance != nullptr)
 	{
 		iCooldowns[AbilityIndex] = Skills[AbilityIndex].GetDefaultObject()->AbilityData.AbilityCooldown;
-		AbilityInstance->InvokeAbility(this, Damage);
+		AbilityInstance->InvokeAbility(this, Stats.Damage);
 	}
 }
 
@@ -118,7 +118,7 @@ void AMegadethCharacter::InvokeAutoAttack()
 	if(AMegadethAbility* AbilityInstance = GetWorld()->SpawnActor<AMegadethAbility>(AutoAttack); AbilityInstance != nullptr)
 	{
 		AACooldown = AutoAttack.GetDefaultObject()->AbilityData.AbilityCooldown;
-		AbilityInstance->InvokeAbility(this, Damage);
+		AbilityInstance->InvokeAbility(this, Stats.Damage);
 	}
 	
 }
@@ -136,12 +136,12 @@ TArray<FMegadethAbilityData> AMegadethCharacter::GetAbilityData() const
 float AMegadethCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator,
 	AActor* DamageCauser)
 {
-	Health -= DamageAmount;
-	RemainingTimeToRegen = TimeToRegen;
+	Stats.Health -= DamageAmount;
+	RemainingTimeToRegen = Stats.TimeToRegen;
 	PlayerHpChange.Broadcast();
 	
 	//deathCheck
-	if(Health <= 0)
+	if(Stats.Health <= 0)
 	{
 		PlayerDeath.Broadcast();
 	}
@@ -151,30 +151,31 @@ float AMegadethCharacter::TakeDamage(float DamageAmount, FDamageEvent const& Dam
 
 void AMegadethCharacter::AddGold(int Amount)
 {
-	Gold+= Amount;
+	Stats.Gold+= Amount;
 	PlayerGoldChange.Broadcast();
 }
 
 void AMegadethCharacter::AddXp(int Amount)
 {
-	XP += Amount;
-	Level = UKismetMathLibrary::Log(1+0.0275*XP,1.55)+1;
+	Stats.XP += Amount;
+	Stats.Level = UKismetMathLibrary::Log(1+0.0275*Stats.XP,1.55)+1;
 	// PlayerXpChange.Broadcast(XP, Level);
-	PlayerXpChange.Broadcast(XP, Level);
+	PlayerXpChange.Broadcast(Stats.XP, Stats.Level);
 
-	if(previousLevel != Level)
+	if(previousLevel != Stats.Level)
 	{
 		//level up!
-		previousLevel = Level;
+		previousLevel = Stats.Level;
 		// LevelUp.Broadcast();
 
-		MaxHealth +=  BaseHealth/3;
-		Health +=  BaseHealth/3;
-		if(Health > MaxHealth)
+		Stats.MaxHealth +=  Stats.BaseHealth/3;
+		Stats.Health +=  Stats.BaseHealth/3;
+		if(Stats.Health > Stats.MaxHealth)
 		{
-			Health = MaxHealth;
+			Stats.Health = Stats.MaxHealth;
 		}
-		Damage += BaseDamage/5;
+		Stats.Damage += Stats.BaseDamage/5;
+		Stats.HealthRegen += Stats.BaseHealthRegen/5;
 	}
 }
 
