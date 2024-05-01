@@ -61,7 +61,8 @@ protected:
 
 	UPROPERTY()
 	//Time factor used to calculate difficulty
-	float TimeFactor = 0.0506;
+	//Multiplier: 1-easy 2-medium 3-hard
+	float TimeFactor = 0.0506 * 3;
 
 	UPROPERTY()
 	//Factor used to scale difficulty

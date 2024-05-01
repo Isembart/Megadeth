@@ -77,7 +77,7 @@ void AMegadethEnemy::ScaleStats_Implementation(float DifficultyCoefficient)
 {
 	Level = 1 + (DifficultyCoefficient - 1)/0.2;
 	
-	Health = Health + Health/5 * (Level -1);
+	Health = Health + Health/3 * (Level -1);
 	MaxHealth = Health;
 
 	Damage = Damage + Damage/3 * (Level -1);

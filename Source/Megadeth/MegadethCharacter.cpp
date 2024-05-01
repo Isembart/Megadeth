@@ -162,21 +162,19 @@ void AMegadethCharacter::AddXp(int Amount)
 	// PlayerXpChange.Broadcast(XP, Level);
 	PlayerXpChange.Broadcast(Stats.XP, Stats.Level);
 
-	if(previousLevel != Stats.Level)
-	{
+	// if(previousLevel != Stats.Level)
+	// {
 		//level up!
-		previousLevel = Stats.Level;
+		// previousLevel = Stats.Level;
 		// LevelUp.Broadcast();
 
-		Stats.MaxHealth +=  Stats.BaseHealth/3;
-		Stats.Health +=  Stats.BaseHealth/3;
-		if(Stats.Health > Stats.MaxHealth)
-		{
-			Stats.Health = Stats.MaxHealth;
-		}
-		Stats.Damage += Stats.BaseDamage/5;
-		Stats.HealthRegen += Stats.BaseHealthRegen/5;
-	}
+	Stats.MaxHealth =  (Stats.BaseHealth/3) * (Stats.Level-1) + Stats.BaseHealth;
+	PlayerHpChange.Broadcast();
+	Stats.Damage = (Stats.BaseDamage/5) * (Stats.Level-1) + Stats.BaseDamage;
+	Stats.HealthRegen = (Stats.BaseHealthRegen/50) * (Stats.Level-1) + Stats.BaseHealthRegen;
+
+
+	// }
 }
 
 

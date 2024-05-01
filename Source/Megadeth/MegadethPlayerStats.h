@@ -14,10 +14,7 @@ struct FMegadethPlayerStats : public FTableRowBase
 	// FName AbilityName = "Ability";
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
-	double BaseHealth = 100;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
-	double BaseDamage = 12;
+	double BaseHealth = 80;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
 	double Health = BaseHealth;
@@ -25,6 +22,18 @@ struct FMegadethPlayerStats : public FTableRowBase
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
 	double MaxHealth = BaseHealth;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
+	double BaseHealthRegen = 5;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
+	double HealthRegen = BaseHealthRegen;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
+	double TimeToRegen = 3;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
+	double BaseDamage = 12;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
 	double Damage = BaseDamage;
 
@@ -36,12 +45,4 @@ struct FMegadethPlayerStats : public FTableRowBase
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats", meta = (AllowPrivateAccess = "true"))
 	int XP = 0;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
-	double BaseHealthRegen = 20;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
-	double HealthRegen = BaseHealthRegen;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
-	double TimeToRegen = 5;
 };
