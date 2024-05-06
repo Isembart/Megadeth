@@ -13,6 +13,7 @@
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerDeath);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerGoldChange);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerHpChangeSignature);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerLeveupSignature);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPlayerXpChange, int32, TotalXP, int32, CurrentLevel);
 
 
@@ -63,6 +64,9 @@ public:
 	UPROPERTY(BlueprintAssignable, BlueprintCallable)
 	FPlayerHpChangeSignature PlayerHpChange;
 
+	UPROPERTY(BlueprintAssignable, BlueprintCallable)
+	FPlayerLeveupSignature LevelUp;
+	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Stats")
 	FMegadethPlayerStats Stats;
 private:
