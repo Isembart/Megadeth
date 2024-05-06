@@ -7,29 +7,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07c593fa-9117-4ffd-9f71-1122c76a45de" name="Changes" comment="Huge combat director changes. improved spawning, balance and game feel">
-      <change afterPath="$PROJECT_DIR$/Content/Audio/AMBIENCE_UNDERGROUND_POWER_STATION_LOOP.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Audio/AQ_PortalQue.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Audio/BLLTImpt_Hit_Marker_07.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Audio/GUNSupr_Silenced_Pistol_Fire_Short_01.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Audio/LevelUP.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Audio/Music/Stream_Loops_2024-03-06_01.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Audio/Music/Stream_Loops_2024-03-06_02.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Audio/Music/Stream_Loops_2024-03-20_02.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Audio/Music/Stream_Loops_2024-03-30_02.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Audio/SQ_Music.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/M_PortalMaterial.uasset" afterDir="false" />
+    <list default="true" id="07c593fa-9117-4ffd-9f71-1122c76a45de" name="Changes" comment="Added music, fixed bugs, added portal and more">
+      <change afterPath="$PROJECT_DIR$/Content/M_PickupOrbMaterial.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/M_PortalMat.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Megadeth.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Megadeth.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Interactable.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Interactable.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Audio/SQ_Music.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Audio/SQ_Music.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_SkillPedestal.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_SkillPedestal.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_TavernPortal.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_TavernPortal.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_TopDownCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_TopDownCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Enemies/BP_Enemy.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Enemies/BP_Enemy.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Skills/BP_AutoAttack.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Skills/BP_AutoAttack.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/M_PortalMaterial.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/M_PortalMaterial.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Maps/Game.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Game.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Maps/Tavern.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Tavern.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/NewMaterial.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/NewMaterial.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Megadeth/MegadethCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Megadeth/MegadethCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Megadeth/MegadethCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Megadeth/MegadethCharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715007914950</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added music, fixed bugs, added portal and more">
+      <option name="closed" value="true" />
+      <created>1715012009082</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715012009082</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,6 +214,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Changed base cost of interactables" />
     <MESSAGE value="Huge combat director changes. improved spawning, balance and game feel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Huge combat director changes. improved spawning, balance and game feel" />
+    <MESSAGE value="Added music, fixed bugs, added portal and more" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added music, fixed bugs, added portal and more" />
   </component>
 </project>
