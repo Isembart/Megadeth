@@ -70,7 +70,7 @@ void AMegadethCombatDirector::Tick(float DeltaTime)
          		TimePerStage = 0;
          	}
 			//Spawn enemies
-			RoundDelay = TimeBetweenRounds;
+			// RoundDelay = TimeBetweenRounds; //this will be handled in blueprints
 			OnSpawnedWave.Broadcast();
 		}
 	}

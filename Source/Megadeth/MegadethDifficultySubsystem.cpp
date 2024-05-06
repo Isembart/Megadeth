@@ -71,7 +71,7 @@ void UMegadethDifficultySubsystem::LogDebugCoefficients()
 
 void UMegadethDifficultySubsystem::CalculateDifficulty()
 {
-	const int TimeInMinutes = Time / 30; //NOT TIME IN MINUTES!!!! Time in 30 seconds SPED BY 2
+	const int TimeInMinutes = Time / 60; //NOT TIME IN MINUTES!!!! Time in 30 seconds SPED BY 2
 
 	DifficultyCoefficient = FMath::Pow(1.15,StageCompleted) * (TimeFactor * TimeInMinutes+1);
 	// PRINT_FLOAT_ON_SCREEN(DifficultyCoefficient);

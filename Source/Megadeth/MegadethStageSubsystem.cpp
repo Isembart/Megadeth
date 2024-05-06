@@ -26,6 +26,15 @@ void UMegadethStageSubsystem::OnEnteredTavern()
 	{
 		enemy->Destroy();	
 	}
+
+	//Delete all portals on level
+	TArray<AActor*> Portals;
+	UGameplayStatics::GetAllActorsWithTag(GetWorld(), "FieldPortal", Portals);
+
+	for(AActor* portal : Portals)
+	{
+		portal->Destroy();
+	}
 	
 	UMegadethDifficultySubsystem* DifficultySubsystem = GetWorld()->GetSubsystem<UMegadethDifficultySubsystem>();
 	DifficultySubsystem->ToggleTimeFlow(false);

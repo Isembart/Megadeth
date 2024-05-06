@@ -35,7 +35,7 @@ protected:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Difficulty", meta = (AllowPrivate))
 	//credits used to spawn different enemies
-	float EnemyCredits = 100;
+	float EnemyCredits = 0;
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Difficulty", meta = (AllowPrivate))
 	//Credits per second. is calculated with difficulty coefficient
@@ -44,10 +44,6 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Difficulty", meta = (AllowPrivate))
 	//Static multiplier to change game feel, mainly used for testing. will not be calculated
 	float CreditsMultiplier = 2;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Difficulty", meta = (AllowPrivate))
-	//Time between spawning waves
-	float TimeBetweenRounds = 1;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="Difficulty", meta = (AllowPrivate));
 	//Table containing enemy waves. Will be filled in blueprint classes
@@ -72,7 +68,8 @@ protected:
 	void OnEnteredStage();
 private:
 	//Delay between spawning waves
-	float RoundDelay = TimeBetweenRounds;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Difficulty", meta = (AllowPrivateAccess = true))
+	float RoundDelay = 1;
 
 	UFUNCTION()
 	void UpdateDifficulty();
