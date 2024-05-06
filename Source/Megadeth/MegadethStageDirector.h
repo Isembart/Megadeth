@@ -25,7 +25,7 @@ protected:
 	float EnemyCredits = 100;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Difficulty", meta = (AllowPrivate))
-	float InteractableCredits = 200;
+	float InteractableCredits = 100;
 
 	UPROPERTY(BlueprintReadOnly, Category="Difficulty", meta = (AllowPrivate))
 	//Difficulty coefficient. Not writeable. Only accessible here to avoid reaching to subsystem for it

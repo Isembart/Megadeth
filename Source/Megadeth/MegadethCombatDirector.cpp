@@ -45,7 +45,7 @@ void AMegadethCombatDirector::OnEnteredStage()
 void AMegadethCombatDirector::UpdateDifficulty()
 {
 	DifficultyCoefficient = GetWorld()->GetSubsystem<UMegadethDifficultySubsystem>()->GetDifficultyCoefficient();
-	// UE_LOG(LogTemp, Warning, TEXT("CombatDirector: Difficulty updated to %f"), DifficultyCoefficient);
+	UE_LOG(LogTemp, Warning, TEXT("CombatDirector: Difficulty updated to %f"), DifficultyCoefficient);
 }
 
 // Called every frame

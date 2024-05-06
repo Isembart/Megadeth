@@ -4,6 +4,7 @@
 #include "MegadethStageDirector.h"
 
 #include "MegadethDifficultySubsystem.h"
+#include "Kismet/KismetMathLibrary.h"
 
 // Sets default values
 AMegadethStageDirector::AMegadethStageDirector()
@@ -29,6 +30,6 @@ void AMegadethStageDirector::Tick(float DeltaTime)
 void AMegadethStageDirector::UpdateDifficulty()
 {
 	DifficultyCoefficient = GetWorld()->GetSubsystem<UMegadethDifficultySubsystem>()->GetDifficultyCoefficient();
-	EnemyCredits = 100 * DifficultyCoefficient;
-	InteractableCredits = 200 * DifficultyCoefficient;
+	EnemyCredits = 100 + UKismetMathLibrary::Loge(DifficultyCoefficient);
+	InteractableCredits = 100 + UKismetMathLibrary::Loge(DifficultyCoefficient);
 }

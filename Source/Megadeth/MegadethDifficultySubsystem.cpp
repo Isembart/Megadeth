@@ -27,8 +27,9 @@ void UMegadethDifficultySubsystem::ToggleTimeFlow(bool enabled)
 	bTimeFlowEnabled = enabled;
 }
 
-float UMegadethDifficultySubsystem::GetDifficultyCoefficient() const
+float UMegadethDifficultySubsystem::GetDifficultyCoefficient()
 {
+	CalculateDifficulty();
 	return DifficultyCoefficient;
 }
 

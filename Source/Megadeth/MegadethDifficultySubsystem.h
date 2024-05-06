@@ -25,7 +25,7 @@ public:
 	FDifficultyIncreased OnDifficultyIncreased;
 
 	UFUNCTION(BlueprintCallable)
-	float GetDifficultyCoefficient() const;
+	float GetDifficultyCoefficient();
 	
 	UFUNCTION(BlueprintCallable)
 	int SetStageCount(const int Count) { return StageCompleted = Count; };
