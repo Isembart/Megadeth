@@ -161,19 +161,17 @@ void AMegadethCharacter::AddXp(int Amount)
 	Stats.Level = UKismetMathLibrary::Log(1+0.0275*Stats.XP,1.55)+1;
 	// PlayerXpChange.Broadcast(XP, Level);
 	PlayerXpChange.Broadcast(Stats.XP, Stats.Level);
+	
+	Stats.MaxHealth =  (Stats.BaseHealth/3) * (Stats.Level-1) + Stats.BaseHealth;
+	PlayerHpChange.Broadcast();
+	Stats.Damage = (Stats.BaseDamage/5) * (Stats.Level-1) + Stats.BaseDamage;
+	Stats.HealthRegen = (Stats.BaseHealthRegen/50) * (Stats.Level-1) + Stats.BaseHealthRegen;
 
 	 if(previousLevel != Stats.Level)
 	 {
 		// level up!
 		 previousLevel = Stats.Level;
 		 LevelUp.Broadcast();
-
-		Stats.MaxHealth =  (Stats.BaseHealth/3) * (Stats.Level-1) + Stats.BaseHealth;
-		PlayerHpChange.Broadcast();
-		Stats.Damage = (Stats.BaseDamage/5) * (Stats.Level-1) + Stats.BaseDamage;
-		Stats.HealthRegen = (Stats.BaseHealthRegen/50) * (Stats.Level-1) + Stats.BaseHealthRegen;
-
-
 	}
 }
 

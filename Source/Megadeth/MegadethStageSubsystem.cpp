@@ -36,6 +36,15 @@ void UMegadethStageSubsystem::OnEnteredTavern()
 		portal->Destroy();
 	}
 	
+	//Delete all spawned upgrade pedestals on level
+	TArray<AActor*> UPedestals;
+	UGameplayStatics::GetAllActorsWithTag(GetWorld(), "FieldUpgradePickup", UPedestals);
+
+	for(AActor* pedestal : UPedestals)
+	{
+		pedestal->Destroy();
+	}
+	
 	UMegadethDifficultySubsystem* DifficultySubsystem = GetWorld()->GetSubsystem<UMegadethDifficultySubsystem>();
 	DifficultySubsystem->ToggleTimeFlow(false);
 	

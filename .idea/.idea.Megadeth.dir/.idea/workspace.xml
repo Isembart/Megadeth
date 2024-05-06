@@ -7,17 +7,56 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07c593fa-9117-4ffd-9f71-1122c76a45de" name="Changes" comment="Added music, fixed bugs, added portal and more">
-      <change afterPath="$PROJECT_DIR$/Content/M_PickupOrbMaterial.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/M_PortalMat.uasset" afterDir="false" />
+    <list default="true" id="07c593fa-9117-4ffd-9f71-1122c76a45de" name="Changes" comment="redone portal">
+      <change afterPath="$PROJECT_DIR$/Content/Blueprints/BP_MegadethStageDirector.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Blueprints/Upgrades/BP_MaxHealth.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Blueprints/Upgrades/BP_MovementSpeedUp.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon1.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon10.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon11.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon12.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon13.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon14.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon15.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon16.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon17.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon18.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon19.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon2.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon20.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon21.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon22.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon23.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon24.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon25.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon26.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon27.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon28.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon29.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon3.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon30.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon31.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon32.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon4.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon5.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon6.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon7.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon8.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/UI/Icons/icon9.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Megadeth/MegadethStageDirector.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Megadeth/MegadethStageDirector.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Megadeth.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Megadeth.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Audio/SQ_Music.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Audio/SQ_Music.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_SkillPedestal.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_SkillPedestal.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_TavernPortal.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_TavernPortal.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/M_PortalMaterial.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/M_PortalMaterial.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_UpgradePedestal.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_UpgradePedestal.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_UpgradePickup.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_UpgradePickup.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Upgrades/BP_DamageUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Upgrades/BP_DamageUp.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/DT_UpgradeList.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DT_UpgradeList.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/M_PickupOrbMaterial.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/M_PickupOrbMaterial.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Maps/Game.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Game.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Maps/Tavern.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Tavern.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/NewMaterial.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/NewMaterial.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Megadeth/MegadethCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Megadeth/MegadethCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Megadeth/MegadethDifficultySubsystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Megadeth/MegadethDifficultySubsystem.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Megadeth/MegadethStageSubsystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Megadeth/MegadethStageSubsystem.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715012009082</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="redone portal">
+      <option name="closed" value="true" />
+      <created>1715014471367</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715014471367</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +262,7 @@
     <MESSAGE value="Changed base cost of interactables" />
     <MESSAGE value="Huge combat director changes. improved spawning, balance and game feel" />
     <MESSAGE value="Added music, fixed bugs, added portal and more" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added music, fixed bugs, added portal and more" />
+    <MESSAGE value="redone portal" />
+    <option name="LAST_COMMIT_MESSAGE" value="redone portal" />
   </component>
 </project>
