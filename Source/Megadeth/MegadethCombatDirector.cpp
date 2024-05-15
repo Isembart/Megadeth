@@ -33,7 +33,6 @@ void AMegadethCombatDirector::BeginPlay()
 void AMegadethCombatDirector::OnEnteredTavern()
 {
 	bSpawning = false;
-	TimePerStage = 0;
 	EnemyCredits = 0;
 }
 
@@ -55,20 +54,20 @@ void AMegadethCombatDirector::Tick(float DeltaTime)
 	if(bSpawning)
 	{
 	
-	TimePerStage += DeltaTime;
+	// TimePerStage += DeltaTime;
 
 	CreditsPerSecond = CreditsMultiplier * (1 + 0.4 * DifficultyCoefficient);
-	CarrierSpawnChance = 0.0506 * TimePerStage;
+	// CarrierSpawnChance = 0.0506 * TimePerStage;
 	
 	EnemyCredits += CreditsPerSecond * DeltaTime;
 		RoundDelay-= DeltaTime;
 		if(RoundDelay <= 0)
 		{
-			if(rand()%100 < CarrierSpawnChance)
-         	{
-         		OnSpawnCarrier.Broadcast();
-         		TimePerStage = 0;
-         	}
+			// if(rand()%100 < CarrierSpawnChance)
+   //       	{
+   //       		OnSpawnCarrier.Broadcast();
+   //       		TimePerStage = 0;
+   //       	}
 			//Spawn enemies
 			// RoundDelay = TimeBetweenRounds; //this will be handled in blueprints
 			OnSpawnedWave.Broadcast();

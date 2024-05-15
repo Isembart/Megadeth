@@ -54,6 +54,7 @@ void AMegadethCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	iCooldowns.Init(0, Skills.Num());
+	AddXp(0); //Used to recalculate stats if they were changed in blueprint
 }
 
 void AMegadethCharacter::Tick(float DeltaSeconds)

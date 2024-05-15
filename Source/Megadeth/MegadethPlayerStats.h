@@ -16,16 +16,16 @@ struct FMegadethPlayerStats : public FTableRowBase
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
 	double BaseHealth = 80;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category="Stats")
 	double Health = BaseHealth;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category="Stats")
 	double MaxHealth = BaseHealth;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
 	double BaseHealthRegen = 5;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category="Stats")
 	double HealthRegen = BaseHealthRegen;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
@@ -34,7 +34,7 @@ struct FMegadethPlayerStats : public FTableRowBase
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
 	double BaseDamage = 12;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category="Stats")
 	double Damage = BaseDamage;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
