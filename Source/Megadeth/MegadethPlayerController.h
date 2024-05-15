@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "GameFramework/PlayerController.h"
+#include "InputActionValue.h"
 #include "MegadethPlayerController.generated.h"
 
 /** Forward declaration to improve compiling times */
@@ -47,6 +48,15 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	UInputAction* SetDestinationTouchAction;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
+	UInputAction* MoveAction;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
+	UInputAction* MouseMoveAction;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
+	UInputAction* ScrollAction;
+	
 	// Abilities
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	UInputAction* AutoAttackAction;
@@ -60,6 +70,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	UInputAction* Ability1Action4;
 
+	UPROPERTY(EditAnywhere)
+	float CameraZoomSpeed;
+
+	virtual void Tick(float DeltaTime);
 protected:
 	/** True if the controlled character should navigate to the mouse cursor. */
 	uint32 bMoveToMouseCursor : 1;
@@ -69,12 +83,17 @@ protected:
 	// To add mapping context
 	virtual void BeginPlay();
 
+
 	/** Input handlers for SetDestination action. */
 	void OnInputStarted();
 	void OnSetDestinationTriggered();
 	void OnSetDestinationReleased();
 	void OnTouchTriggered();
 	void OnTouchReleased();
+
+	void OnMovement(const FInputActionValue& Value);
+	void OnMouseMovement(const FInputActionValue& Value);
+	void OnScroll(const FInputActionValue& Value);
 
 	//This contains a shit ton of redundancy. But using one input action beeing a 3d vector and then reading its coordinates is so conterintuitive for me.
 	//I dont know how to bind a function with an argument to IA.
@@ -86,13 +105,15 @@ protected:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void AutoAttack();
 
+	UFUNCTION(BlueprintCallable)
+	void OrientPlayerTowardsCursor();
 private:
 	FVector CachedDestination;
+	class AMegadethCharacter* character;
 
 	bool bIsTouch; // Is it a touch device
 	float FollowTime; // For how long it has been pressed
 
-	void OrientPlayerTowardsCursor();
 
 };
 

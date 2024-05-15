@@ -42,6 +42,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void InvokeAutoAttack();
 
+	void SetCameraBoomDistance(float distance);
 	UFUNCTION(BlueprintCallable)
 	TArray<FMegadethAbilityData> GetAbilityData() const;
 	
