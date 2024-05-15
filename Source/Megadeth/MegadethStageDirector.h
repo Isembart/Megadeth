@@ -41,6 +41,9 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSoftClassPtr<AActor> InteractableClass;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSoftClassPtr<AActor> TeleporterClass;
+	
 	UFUNCTION(BlueprintCallable)
 	void UpdateDifficulty();
 public:	

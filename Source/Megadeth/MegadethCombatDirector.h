@@ -23,13 +23,13 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FSpawnedWave OnSpawnedWave;
 	
-	UPROPERTY(BlueprintAssignable)
-	FSpawnedWave OnSpawnCarrier;
+	// UPROPERTY(BlueprintAssignable)
+	// FSpawnedWave OnSpawnCarrier;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Difficulty", meta = (AllowPrivate))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Difficulty", meta = (AllowPrivate))
 	//If true, the system is currently spawning enemies and manages waves
 	bool bSpawning = false;
 	
@@ -49,13 +49,13 @@ protected:
 	//Table containing enemy waves. Will be filled in blueprint classes
 	class UDataTable* EnemyWaveTable;
 	
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Difficulty", meta = (AllowPrivate))
-	//Chance of spawning portal carrier enemy. Increases with time. Resets after spawning carrier and resets per stage
-	float CarrierSpawnChance = 0;
+	// UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Difficulty", meta = (AllowPrivate))
+	// //Chance of spawning portal carrier enemy. Increases with time. Resets after spawning carrier and resets per stage
+	// float CarrierSpawnChance = 0;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Difficulty", meta = (AllowPrivate))
-	//float to store time passed per stage used to calculate carrier spawn chance per stage
-	float TimePerStage = 0;
+	// UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Difficulty", meta = (AllowPrivate))
+	// //float to store time passed per stage used to calculate carrier spawn chance per stage
+	// float TimePerStage = 0;
 	
 	UPROPERTY(BlueprintReadOnly, Category="Difficulty", meta = (AllowPrivate))
 	//Difficulty coefficient. Not writeable. Only accessible here to avoid reaching to subsystem for it
