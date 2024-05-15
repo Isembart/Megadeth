@@ -3,7 +3,6 @@
 #include "MegadethPlayerController.h"
 #include "GameFramework/Pawn.h"
 #include "Blueprint/AIBlueprintHelperLibrary.h"
-#include "NiagaraSystem.h"
 #include "NiagaraFunctionLibrary.h"
 #include "MegadethCharacter.h"
 #include "Engine/World.h"
@@ -27,12 +26,19 @@ void AMegadethPlayerController::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
+	character = Cast<AMegadethCharacter>(GetPawn());
 
 	//Add Input Mapping Context
 	if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer()))
 	{
 		Subsystem->AddMappingContext(DefaultMappingContext, 0);
 	}
+}
+
+void AMegadethPlayerController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	OrientPlayerTowardsCursor();
 }
 
 void AMegadethPlayerController::SetupInputComponent()
@@ -55,6 +61,15 @@ void AMegadethPlayerController::SetupInputComponent()
 		EnhancedInputComponent->BindAction(Ability1Action3, ETriggerEvent::Triggered, this, &AMegadethPlayerController::InvokeAbility3);
 		EnhancedInputComponent->BindAction(Ability1Action4, ETriggerEvent::Triggered, this, &AMegadethPlayerController::InvokeAbility4);
 
+		//Move with WASD
+		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AMegadethPlayerController::OnMovement);
+
+		//ROtate camera with mouse
+		EnhancedInputComponent->BindAction(MouseMoveAction, ETriggerEvent::Triggered, this, &AMegadethPlayerController::OnMouseMovement);
+		
+		//ROtate camera with mouse
+		EnhancedInputComponent->BindAction(ScrollAction, ETriggerEvent::Triggered, this, &AMegadethPlayerController::OnScroll);
+		
 		//auto attack
 		EnhancedInputComponent->BindAction(AutoAttackAction, ETriggerEvent::Triggered, this, &AMegadethPlayerController::AutoAttack);
 	}
@@ -108,59 +123,76 @@ void AMegadethPlayerController::OnSetDestinationReleased()
 	FollowTime = 0.f;
 }
 
+void AMegadethPlayerController::OnMovement(const FInputActionValue& Value)
+{
+	// UE_LOG(LogTemp,Warning, TEXT("OnMovement"));
+	const FVector2D MovementDirection = Value.Get<FVector2D>();
+	// UE_LOG(LogTemp, Warning, TEXT("Movement Direction: %s"), *MovementDirection.ToString());
+	APawn* ControlledPawn = GetPawn();
+	if (ControlledPawn != nullptr)
+	{
+		// ControlledPawn->AddMovementInput(FVector(MovementDirection.X,MovementDirection.Y,0), 1.0, false);
+		//Get the forward vector of the camera
+		FVector CameraForward = GetControlRotation().Vector();
+		CameraForward.Z = 0;
+		CameraForward.Normalize();
+		//Get the right vector of the camera
+		FVector CameraRight = FRotationMatrix(GetControlRotation()).GetScaledAxis(EAxis::Y);
+		CameraRight.Z = 0;
+		CameraRight.Normalize();
+		//Add the movement input
+		ControlledPawn->AddMovementInput(CameraForward * MovementDirection.Y + CameraRight * MovementDirection.X, 1.0, false);
+		
+	}
+}
+
+void AMegadethPlayerController::OnMouseMovement(const FInputActionValue& Value)
+{
+	const FVector2D LookDirection = Value.Get<FVector2D>();
+	AddYawInput(LookDirection.X);
+	AddPitchInput(LookDirection.Y);
+}
+
+void AMegadethPlayerController::OnScroll(const FInputActionValue& Value)
+{
+	const float ScrollDirection = Value.Get<float>();
+// UE_LOG(LogTemp, Warning, TEXT("Scroll Direction: %f"), ScrollDirection);
+	//set the camera boom distance to the scroll direction
+		character->SetCameraBoomDistance(ScrollDirection * CameraZoomSpeed);
+}
+
+
 void AMegadethPlayerController::InvokeAbility1()
 {
-	AMegadethCharacter* character = Cast<AMegadethCharacter>(GetPawn());
-	if(character != nullptr)
-	{
-		OrientPlayerTowardsCursor();
+	OrientPlayerTowardsCursor();
 		character->InvokeAbility(0);
-	}
 }
 
 void AMegadethPlayerController::InvokeAbility2()
 {
-	AMegadethCharacter* character = Cast<AMegadethCharacter>(GetPawn());
-	if(character != nullptr)
-	{
-		OrientPlayerTowardsCursor();
+	OrientPlayerTowardsCursor();
 		character->InvokeAbility(1);
-	}
 }
 void AMegadethPlayerController::InvokeAbility3()
 {
-	AMegadethCharacter* character = Cast<AMegadethCharacter>(GetPawn());
-	if(character != nullptr)
-	{
-		OrientPlayerTowardsCursor();
+	OrientPlayerTowardsCursor();
 		character->InvokeAbility(2);
-	}
 }
 void AMegadethPlayerController::InvokeAbility4()
 {
-	AMegadethCharacter* character = Cast<AMegadethCharacter>(GetPawn());
-	if(character != nullptr)
-	{
-		OrientPlayerTowardsCursor();
+	OrientPlayerTowardsCursor();
 		character->InvokeAbility(3);
-	}
 }
 
 
 void AMegadethPlayerController::AutoAttack_Implementation()
 {
-	if(AMegadethCharacter* character = Cast<AMegadethCharacter>(GetPawn()))
-	{
-		OrientPlayerTowardsCursor();
-		// StopMovement();
+	OrientPlayerTowardsCursor();
 		character->InvokeAutoAttack();
-	}	
 }
 
 void AMegadethPlayerController::OrientPlayerTowardsCursor()
 {
-	if(AMegadethCharacter* character = Cast<AMegadethCharacter>(GetPawn()))
-	{
 		FHitResult HitResult;
 		//TraceTypeQuery1 is PlayerAim
 		bool bHit = GetHitResultUnderCursorByChannel(ETraceTypeQuery::TraceTypeQuery1, false, HitResult);
@@ -179,5 +211,4 @@ void AMegadethPlayerController::OrientPlayerTowardsCursor()
 			// FRotator interpolatedRotation = FMath::RInterpConstantTo(character->GetActorRotation(), LookAtRotator, GetWorld()->GetDeltaSeconds(), RotationInterpolation);
 			character->SetActorRotation(LookAtRotator);
 		}
-	}
 }

@@ -124,6 +124,11 @@ void AMegadethCharacter::InvokeAutoAttack()
 	
 }
 
+void AMegadethCharacter::SetCameraBoomDistance(float distance)
+{
+	CameraBoom->TargetArmLength += distance;
+}
+
 TArray<FMegadethAbilityData> AMegadethCharacter::GetAbilityData() const
 {
 	TArray<FMegadethAbilityData> Data;
