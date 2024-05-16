@@ -20,6 +20,7 @@ AMegadethPlayerController::AMegadethPlayerController()
 	DefaultMouseCursor = EMouseCursor::Default;
 	CachedDestination = FVector::ZeroVector;
 	FollowTime = 0.f;
+
 }
 
 void AMegadethPlayerController::BeginPlay()
@@ -27,6 +28,7 @@ void AMegadethPlayerController::BeginPlay()
 	// Call the base class  
 	Super::BeginPlay();
 	character = Cast<AMegadethCharacter>(GetPawn());
+	SetControlRotation(FRotator(-60,0,0));
 
 	//Add Input Mapping Context
 	if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer()))
