@@ -48,7 +48,6 @@ public:
 	
 	virtual float TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;
 
-	FPlayerDeath PlayerDeath;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skills", meta = (AllowPrivateAccess = "true"))
 	TArray<TSubclassOf<AMegadethAbility>> Skills;
@@ -65,6 +64,9 @@ public:
 	UPROPERTY(BlueprintAssignable, BlueprintCallable)
 	FPlayerHpChangeSignature PlayerHpChange;
 
+	UPROPERTY(BlueprintAssignable)
+	FPlayerDeath PlayerDeath;
+	
 	UPROPERTY(BlueprintAssignable, BlueprintCallable)
 	FPlayerLeveupSignature LevelUp;
 	

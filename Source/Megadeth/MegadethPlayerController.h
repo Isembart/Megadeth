@@ -44,10 +44,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	UInputAction* SetDestinationClickAction;
 
-	/** Jump Input Action */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
-	UInputAction* SetDestinationTouchAction;
-
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	UInputAction* MoveAction;
 	
@@ -72,6 +68,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	float CameraZoomSpeed;
+
+	// UPROPERTY(VisibleAnywhere,BlueprintReadOnly)
+	// FRotator RotationToMouse;
 
 	virtual void Tick(float DeltaTime);
 protected:
