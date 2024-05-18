@@ -153,6 +153,12 @@ void AMegadethPlayerController::OnMouseMovement(const FInputActionValue& Value)
 	const FVector2D LookDirection = Value.Get<FVector2D>();
 	AddYawInput(LookDirection.X);
 	AddPitchInput(LookDirection.Y);
+
+	//clamp the pitch
+	FRotator NewRotation = GetControlRotation();
+	// UE_LOG(LogTemp, Warning, TEXT("Look Direction: %s"), *NewRotation.ToString());
+	NewRotation.Pitch = FMath::Clamp(NewRotation.Pitch, MinPitch, MaxPitch);
+	SetControlRotation(NewRotation);
 }
 
 void AMegadethPlayerController::OnScroll(const FInputActionValue& Value)

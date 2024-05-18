@@ -68,6 +68,11 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	float CameraZoomSpeed;
+	
+	UPROPERTY(EditAnywhere)
+	double MinPitch;
+	UPROPERTY(EditAnywhere)
+	double MaxPitch;
 
 	// UPROPERTY(VisibleAnywhere,BlueprintReadOnly)
 	// FRotator RotationToMouse;

@@ -132,9 +132,9 @@ void AMegadethCharacter::SetCameraBoomDistance(float distance)
 	{
 		CameraBoom->TargetArmLength = 300;
 	}
-	else if(CameraBoom->TargetArmLength > 1200)
+	else if(CameraBoom->TargetArmLength > 2000)
 	{
-		CameraBoom->TargetArmLength = 1200;
+		CameraBoom->TargetArmLength = 2000;
 	}
 }
 
