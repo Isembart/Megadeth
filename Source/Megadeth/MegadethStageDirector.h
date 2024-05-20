@@ -38,12 +38,12 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSoftObjectPtr<UDataTable> InteractableTable;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TSoftClassPtr<AActor> InteractableClass;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TSoftClassPtr<AActor> TeleporterClass;
-	
+	// UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	// TSoftClassPtr<AActor> InteractableClass;
+	//
+	// UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	// TSubclassOf<AActor> TeleporterClass;
+	//
 	UFUNCTION(BlueprintCallable)
 	void UpdateDifficulty();
 public:	
