@@ -23,10 +23,9 @@ class AMegadethPlayerController : public APlayerController
 public:
 	AMegadethPlayerController();
 
-	/** Time Threshold to know if it was a short press */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
-	float ShortPressThreshold;
-
+	TEnumAsByte<ETraceTypeQuery> PlayerAimTraceTypeQuery;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	float CameraAngleAimCompensation = 60;
 
