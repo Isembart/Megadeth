@@ -203,12 +203,15 @@ void AMegadethPlayerController::OrientPlayerTowardsCursor()
 {
 		FHitResult HitResult;
 		//TraceTypeQuery1 is PlayerAim
-		bool bHit = GetHitResultUnderCursorByChannel(ETraceTypeQuery::TraceTypeQuery1, false, HitResult);
+		bool bHit = GetHitResultUnderCursorByChannel(PlayerAimTraceTypeQuery, false, HitResult);
 		if(bHit)
 		{
 			FVector HitLocation = HitResult.Location;
+			//draw debug line between player's feet and HitLocation
 			//to compensate camera angle we subtract a value from X
-			HitLocation.X -= CameraAngleAimCompensation;
+			HitLocation.Z = character->GetActorLocation().Z;
+			// DrawDebugLine(GetWorld(), character->GetActorLocation(), HitLocation, FColor::Red, false, 0.1f, 0, 1);
+			
 
 			FRotator LookAtRotator = UKismetMathLibrary::FindLookAtRotation(character->GetActorLocation(), HitLocation);
 

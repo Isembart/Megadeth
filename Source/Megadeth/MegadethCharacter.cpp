@@ -105,7 +105,16 @@ void AMegadethCharacter::InvokeAbility(const int AbilityIndex)
 	if(AMegadethAbility* AbilityInstance = GetWorld()->SpawnActor<AMegadethAbility>(Skills[AbilityIndex]); AbilityInstance != nullptr)
 	{
 		iCooldowns[AbilityIndex] = Skills[AbilityIndex].GetDefaultObject()->AbilityData.AbilityCooldown;
-		AbilityInstance->InvokeAbility(this, Stats.Damage);
+		bool shouldCrit = false;
+		if(rand()%100 < Stats.CritChance)
+		{
+			shouldCrit = true;
+			AbilityInstance->InvokeAbility(this, Stats.Damage*2, shouldCrit);
+		}
+		else
+		{
+			AbilityInstance->InvokeAbility(this, Stats.Damage, shouldCrit);
+		}
 	}
 }
 
@@ -119,7 +128,18 @@ void AMegadethCharacter::InvokeAutoAttack()
 	if(AMegadethAbility* AbilityInstance = GetWorld()->SpawnActor<AMegadethAbility>(AutoAttack); AbilityInstance != nullptr)
 	{
 		AACooldown = AutoAttack.GetDefaultObject()->AbilityData.AbilityCooldown;
-		AbilityInstance->InvokeAbility(this, Stats.Damage);
+		
+		bool shouldCrit = false;
+		
+		if(rand()%100 < Stats.CritChance)
+		{
+			shouldCrit = true;
+			AbilityInstance->InvokeAbility(this, Stats.Damage*2, shouldCrit);
+		}
+		else
+		{
+			AbilityInstance->InvokeAbility(this, Stats.Damage, shouldCrit);
+		}
 	}
 	
 }

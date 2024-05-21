@@ -38,6 +38,12 @@ struct FMegadethPlayerStats : public FTableRowBase
 	double Damage = BaseDamage;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
+	double BaseCritChance = 1;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
+	double CritChance = BaseCritChance;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats")
 	int Level = 1;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Stats", meta = (AllowPrivateAccess = "true"))
