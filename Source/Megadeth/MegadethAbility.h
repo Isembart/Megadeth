@@ -30,7 +30,7 @@ public:
 
 	// UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="Ability")
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category="Ability")
-	void InvokeAbility(AMegadethCharacter* Character, int Damage);
+	void InvokeAbility(AMegadethCharacter* Character, int Damage, bool bIsCrit);
 
 	UFUNCTION(BlueprintCallable)
 	FMegadethAbilityData GetAbilityData() const{return AbilityData;};
