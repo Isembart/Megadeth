@@ -40,7 +40,7 @@ void AMegadethPlayerController::BeginPlay()
 void AMegadethPlayerController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	// OrientPlayerTowardsCursor();
+	OrientPlayerTowardsCursor();
 }
 
 void AMegadethPlayerController::SetupInputComponent()
