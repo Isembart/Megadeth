@@ -127,7 +127,8 @@ void AMegadethCharacter::InvokeAutoAttack()
 	}
 	if(AMegadethAbility* AbilityInstance = GetWorld()->SpawnActor<AMegadethAbility>(AutoAttack); AbilityInstance != nullptr)
 	{
-		AACooldown = AutoAttack.GetDefaultObject()->AbilityData.AbilityCooldown;
+		// AACooldown = AutoAttack.GetDefaultObject()->AbilityData.AbilityCooldown;
+		AACooldown = WriteableAACooldown;
 		
 		bool shouldCrit = false;
 		

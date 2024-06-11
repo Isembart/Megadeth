@@ -12,6 +12,8 @@
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEnteredStage);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEnteredTavern);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FActivatedTeleporter);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FTeleporterCharged);
 
 UCLASS()
 class MEGADETH_API UMegadethStageSubsystem : public UWorldSubsystem
@@ -27,6 +29,12 @@ public:
 
 	UPROPERTY(BlueprintAssignable)
 	FEnteredStage EnteredTavern;
+	
+	UPROPERTY(BlueprintAssignable, BlueprintCallable)
+	FTeleporterCharged TeleporterCharged;
+	
+	UPROPERTY(BlueprintAssignable, BlueprintCallable)
+	FActivatedTeleporter ActivatedTeleporter;
 	
 	UFUNCTION(BlueprintCallable)
 	void OnEnteredTavern();
