@@ -7,7 +7,6 @@
 - Marcin: Design UI, Design SFX
 - Daniel: Design Mapy, Design Przeciwników
 
-
 # Mechaniki
 
 ### Game loop
@@ -38,3 +37,19 @@ Wszelkie dostępne w grze assety tj. muzyka, ikony zostały pobrane z https://it
 # Inspiracje
 Risk of Rain, Risk of Rain 2, Vampire Survivors, V rising, Albion online
 
+
+# Jak to działa?
+Mechanika skalowania poziomu trudności jest zaczerpnięta z RoR2, informacje na temat jej działania można przeczytać pod linkami:
+https://riskofrain2.fandom.com/wiki/Difficulty
+https://riskofrain2.fandom.com/wiki/Level
+
+### Spawning przeciwników
+Spawning przeciwników jest oparty o tzw obiekty **CombatDirector**.
+Każdy z nich posiada ilość kredytów, które jest w stanie wydać na spawn przeciwnika. Ilość otrzymywanych kredytów co sekundę jest określona na podstawie współczynnika trudności (https://riskofrain2.fandom.com/wiki/Difficulty). 
+Na mapie istnieją dwa takie obiekty - FastCombatDirector (czas pomiędzy spawnami: 3-9s) oraz SlowCombtDirector (czas pomiędzy spawnami: 15-30s). Jeśli director poprawnie zespawnuje przeciwnika wchodzi on w stan fali, w którym będzie spawnował tego samego przeciwnika tak długo jak to możliwe (o ile nie skończą mu się kredyty), czas pomiędzy spawnami w fali to od 0.5 do 2 sekund. Po skończonym spawnie fali (gdy directorowi nie uda się przeprowadzić spawnu), director wylosuje nowego przeciwnika.
+
+Cały proces jest dogłębnie opisany tutaj:
+https://riskofrain2.fandom.com/wiki/Directors
+
+### Bardzo poglądowy UML
+![[UML.png]]
