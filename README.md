@@ -1,3 +1,6 @@
+# Windows build
+https://drive.google.com/file/d/1wl9AtmJrxTJYlYI6JFZIJI9IyAhlehru/view?usp=drive_link
+
 # Skład osobowy grupy
 - Maurycy Farski
 - Daniel Pietruczyk-Phan
@@ -52,4 +55,4 @@ Cały proces jest dogłębnie opisany tutaj:
 https://riskofrain2.fandom.com/wiki/Directors
 
 ### Bardzo poglądowy UML
-![[UML.png]]
+![uml](https://github.com/Isembart/Megadeth/blob/main/UML.png)
