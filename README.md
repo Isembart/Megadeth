@@ -1,6 +1,6 @@
 # Windows build
 https://drive.google.com/file/d/1wl9AtmJrxTJYlYI6JFZIJI9IyAhlehru/view?usp=drive_link
-# Dokumentacaj
+# Dokumentacja
 https://github.com/Isembart/Megadeth
 
 # Skład osobowy grupy
