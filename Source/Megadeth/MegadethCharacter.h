@@ -73,8 +73,8 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Stats")
 	FMegadethPlayerStats Stats;
 	
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="Skills", meta = (AllowPrivateAccess = "true"))
-	double WriteableAACooldown = 0.4;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skills", meta = (AllowPrivateAccess = "true"))
+	double WriteableAACooldown = 0.8;
 private:
 	/** Top down camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
