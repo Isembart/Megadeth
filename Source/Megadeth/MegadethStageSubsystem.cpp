@@ -47,7 +47,7 @@ void UMegadethStageSubsystem::OnEnteredTavern()
 
 	//Destroy mines
 	TArray<AActor*> Mines;
-	UGameplayStatics::GetAllActorsWithTag(GetWorld(), "Mine", UPedestals);
+	UGameplayStatics::GetAllActorsWithTag(GetWorld(), "Mine", Mines);
 
 	for(AActor* mine : Mines)
 	{
