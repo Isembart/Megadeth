@@ -61,6 +61,8 @@ float AMegadethEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageE
 {
 
 	Health -= DamageAmount;
+	//It's done in this order so that even when enemy should die it will firstly spawn damage popup and play hitsound
+	Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 	
 	//deathCheck
 	if(Health <= 0)
@@ -68,7 +70,8 @@ float AMegadethEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageE
 		OnDeath.Broadcast();
 	}
 	
-	return Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
+	// return Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
+	return 0;
 	
 }
 

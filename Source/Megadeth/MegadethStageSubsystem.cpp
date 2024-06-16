@@ -44,6 +44,15 @@ void UMegadethStageSubsystem::OnEnteredTavern()
 	{
 		pedestal->Destroy();
 	}
+
+	//Destroy mines
+	TArray<AActor*> Mines;
+	UGameplayStatics::GetAllActorsWithTag(GetWorld(), "Mine", UPedestals);
+
+	for(AActor* mine : Mines)
+	{
+		mine->Destroy();
+	}
 	
 	UMegadethDifficultySubsystem* DifficultySubsystem = GetWorld()->GetSubsystem<UMegadethDifficultySubsystem>();
 	DifficultySubsystem->ToggleTimeFlow(false);
